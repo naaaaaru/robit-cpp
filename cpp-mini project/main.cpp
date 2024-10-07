@@ -317,14 +317,14 @@ void statisticsMode(Calc& calc)
     }
 
     std::string operation;
-    std::cout << "계산할 항목을 선택하세요 (average, stddev, median, max, min): ";
+    std::cout << "계산할 항목을 선택하세요 (avg, std, med, max, min): ";
     std::cin >> operation;
 
-    if (operation == "average")
+    if (operation == "avg")
         std::cout << "평균: " << calc.average(numbers) << std::endl;
-    else if (operation == "stddev")
+    else if (operation == "std")
         std::cout << "표준편차: " << calc.standardDeviation(numbers) << std::endl;
-    else if (operation == "median")
+    else if (operation == "med")
         std::cout << "중앙값: " << calc.median(numbers) << std::endl;
     else if (operation == "max")
         std::cout << "최댓값: " << calc.max(numbers) << std::endl;
