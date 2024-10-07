@@ -26,7 +26,7 @@ int main()
         if (mode == CALCULATOR)
         {
             std::cout << "[계산기 모드] 현재 결과: " << calc.getRes() << std::endl;
-            std::cout << "연산을 선택하세요 (add, sub, mul, div, sqrt, pow, fact, sin, cos, tan, log, ln, rand, pi, clear, mode): ";
+            std::cout << "연산을 선택하세요 (add, sub, mul, div, sqr, pow, fact, sin, cos, tan, log, ln, rand, pi, clear, mode): ";
             std::cin >> input;
 
             if (input == "quit")
@@ -55,11 +55,11 @@ int main()
                 std::cin >> max;
                 calc.rand(min, max);
             }
-            else if (input == "sqrt")
+            else if (input == "sqr")
             {
-                calc.sqrt();
+                calc.sqr();
             }
-            else if (input == "fact")
+            else if (input == "fact" || input == "!")
             {
                 calc.fact();
             }
@@ -99,23 +99,23 @@ int main()
                 }
                 try
                 {
-                    if (input == "add")
+                    if (input == "add" || input == "+")
                     {
                         calc.add(val);
                     }
-                    else if (input == "sub")
+                    else if (input == "sub" || input == "-")
                     {
                         calc.sub(val);
                     }
-                    else if (input == "mul")
+                    else if (input == "mul" || input == "*")
                     {
                         calc.mul(val);
                     }
-                    else if (input == "div")
+                    else if (input == "div" || input == "/")
                     {
                         calc.div(val);
                     }
-                    else if (input == "pow")
+                    else if (input == "pow" || input == "^")
                     {
                         calc.pow(val);
                     }
@@ -274,7 +274,7 @@ void temperatureConverter(Calc& calc, double value, char unit)
 void weightConverter(Calc& calc, double value, char unit)
 {
     std::string targetUnit;
-    std::cout << "어떤 단위로 변환하시겠습니까? (k: 킬로그램, g: 그램, p: 파운드): ";
+    std::cout << "어떤 단위로 변환하시겠습니까? (kg: 킬로그램, g: 그램, p: 파운드): ";
     std::cin >> targetUnit;
 
     double result = 0;
