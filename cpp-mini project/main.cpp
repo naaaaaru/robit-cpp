@@ -19,7 +19,7 @@ int main()
     std::string input;
     double val, min, max;
 
-    std::cout << "모드를 전환하려면 'mode'를 입력하세요. 종료하려면 'q'를 입력하세요." << std::endl;
+    std::cout << "모드를 전환하려면 'mode'를 입력하세요. 종료하려면 'quit'를 입력하세요." << std::endl;
 
     while (true)
     {
@@ -29,7 +29,7 @@ int main()
             std::cout << "연산을 선택하세요 (add, sub, mul, div, sqrt, pow, fact, sin, cos, tan, log, ln, rand, pi, clear, mode): ";
             std::cin >> input;
 
-            if (input == "q")
+            if (input == "quit")
             {
                 std::cout << "프로그램을 종료합니다." << std::endl;
                 break;
@@ -144,7 +144,7 @@ int main()
 
             double value;
             char unit;
-            std::cout << "변환할 값을 입력하세요 (예: 100 c): ";
+            std::cout << "변환할 값을 입력하세요: ";
             std::cin >> value >> unit;
 
             if (unit == 'i' || unit == 'm' || unit == 'f' || unit == 'c' || unit == 'k')
