@@ -33,7 +33,7 @@ double Calc::div(double num)
     result /= num;
     return result;
 }
-double Calc::sqrt()
+double Calc::sqr()
 {
     if (result < 0) throw std::invalid_argument("음수의 제곱근은 불가능");
     result = std::sqrt(result);
@@ -47,7 +47,12 @@ double Calc::pow(double num)
 double Calc::fact()
 {
     if (result < 0 || std::floor(result) != result) throw std::invalid_argument("음수나 소수의 팩토리얼 불가능");
-    result = std::tgamma(result + 1);
+    double fact = 1;
+    for (int i = 1; i <= static_cast<int>(result); ++i)
+    {
+       fact *= i;
+    }
+    result = fact;
     return result;
 }
 double Calc::sin()
@@ -154,7 +159,8 @@ double Calc::average(const std::vector<double>& nums)
 double Calc::standardDeviation(const std::vector<double>& nums)
 {
     double mean = average(nums);
-    double sq_sum = std::accumulate(nums.begin(), nums.end(), 0.0, [mean](double acc, double num) {
+    double sq_sum = std::accumulate(nums.begin(), nums.end(), 0.0, [mean](double acc, double num)
+    {
         return acc + (num - mean) * (num - mean);
     });
     return std::sqrt(sq_sum / nums.size());
@@ -175,3 +181,5 @@ double Calc::min(const std::vector<double>& nums)
 {
     return *std::min_element(nums.begin(), nums.end());
 }
+
+
