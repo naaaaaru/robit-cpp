@@ -38,7 +38,14 @@ int main()
         }
         else if(input == "empty")
         {
-            std::cout << (myVector.empty() ? "비어있음" : "비어있지 않음") << std::endl;
+            if(myVector.empty() == 0)
+            {
+                std::cout << "비어있지 않음" << std::endl;
+            }
+            if(myVector.empty() == 1)
+            {
+                std::cout << "비어있음" << std::endl;
+            }
         }
         else if(input == "erase")
         {
