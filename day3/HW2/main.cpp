@@ -65,6 +65,10 @@ int main()
         {
             std::cout << "크기: " << myVector.size() << std::endl;
         }
+        else if(input == "clear")
+        {
+            myVector.clear();
+        }
         else if(input == "save") // 벡터를 파일에 저장
         {
             std::ofstream outFile("vector.txt"); // 파일 열기
